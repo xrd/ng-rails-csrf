@@ -20,7 +20,7 @@ Then, add the asset to your application.js. The following line should go *before
 
     //= require ng-rails-csrf
 
-See the sample project if you need an example: https://github.com/xrd/ng-rails-csrf-sample
+See the sample project if you need an example: https://github.com/xrd/ng-rails-csrf-sample (application.js: https://raw.github.com/xrd/ng-rails-csrf-sample/master/app/assets/javascripts/application.js)
 
 Now all HTTP requests (both those made with the raw $http object and those created with $resource) will get the CSRF token properly included in the request headers.
 
