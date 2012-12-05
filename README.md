@@ -1,12 +1,12 @@
-# Ng::Rails::Csrf
+# ng-rails-csrf
 
-TODO: Write a gem description
+Using AngularJS and Rails together? If you are making any HTTP requests then the "ng-rails-csrf" gem can help by automatically adding the CSRF token to HTTP headers. Rails will not accept requests without this token if you are using CSRF protection.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'ng-rails-csrf'
+    gem 'ng-rails-csrf', :git => "git://github.com/xrd/ng-rails-csrf.git""
 
 And then execute:
 
@@ -16,9 +16,17 @@ Or install it yourself as:
 
     $ gem install ng-rails-csrf
 
-## Usage
+In your module definition, include the "ng-rails-csrf" module
 
-TODO: Write usage instructions here
+    var module = angular.module( 'mySpecialModule', [ 'ngResource', 'ng-rails-csrf' ] ).
+
+Then, add the asset to your application.js. The following line should go *before* any module which uses it and *after* angular is included in your asset list. 
+
+    //= require ng-rails-csrf
+
+See the sample project if you need an example: https://github.com/xrd/ng-rails-csrf-sample
+
+Now all HTTP requests (both those made with the raw $http object and those created with $resource) will get the CSRF token properly included in the request headers.
 
 ## Contributing
 
