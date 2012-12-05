@@ -12,10 +12,6 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install ng-rails-csrf
-
 In your module definition, include the "ng-rails-csrf" module
 
     var module = angular.module( 'mySpecialModule', [ 'ngResource', 'ng-rails-csrf' ] ).
