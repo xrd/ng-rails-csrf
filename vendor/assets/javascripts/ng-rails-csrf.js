@@ -1,6 +1,17 @@
-
-angular.module('ng-rails-csrf', [] ).config(['$httpProvider', function($httpProvider) {
-    var authToken;
-    authToken = $('meta[name="csrf-token"]').attr('content');
-    $httpProvider.defaults.headers.common['X-CSRF-TOKEN'] = authToken;
+angular.module('ng-rails-csrf', [] ).config(['$httpProvider', function($httpProvider) {    
+    var getToken = function() { 
+        var el = doc.querySelector('meta[name="csrf-token"]');
+        return el && el.getAttribute('content');
+    };
+    var updateToken = function() {
+        var headers = $httpProvider.defaults.headers.common, token = getToken();
+        if (token) {
+            headers['X-CSRF-TOKEN'] = getToken();
+            headers['X-Requested-With'] = 'XMLHttpRequest';            
+        } 
+    };    
+    updateToken();    
+    if (window['Turbolinks']) {
+      $(document).bind('page:change', updateToken); 
+    }
 }]);
