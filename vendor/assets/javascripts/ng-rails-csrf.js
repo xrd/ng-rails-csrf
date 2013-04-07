@@ -1,6 +1,6 @@
 angular.module('ng-rails-csrf', [] ).config(['$httpProvider', function($httpProvider) {    
     var getToken = function() { 
-        var el = doc.querySelector('meta[name="csrf-token"]');
+        var el = document.querySelector('meta[name="csrf-token"]');
         return el && el.getAttribute('content');
     };
     var updateToken = function() {
