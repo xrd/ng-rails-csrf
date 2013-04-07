@@ -24,6 +24,10 @@ See the sample project if you need an example: https://github.com/xrd/ng-rails-c
 
 Now all HTTP requests (both those made with the raw $http object and those created with $resource) will get the CSRF token properly included in the request headers.
 
+## Thanks
+
+Thanks to @glebm for adding Turbolinks support. And, to @sectore for fixing an issue with AngularJS v1.1.
+
 ## Contributing
 
 1. Fork it
