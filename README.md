@@ -6,7 +6,7 @@ Using AngularJS and Rails together? If you are making any HTTP requests then the
 
 Add this line to your application's Gemfile:
 
-    gem 'ng-rails-csrf', :git => "git://github.com/xrd/ng-rails-csrf.git""
+    gem 'ng-rails-csrf', :git => "git://github.com/xrd/ng-rails-csrf.git"
 
 And then execute:
 
