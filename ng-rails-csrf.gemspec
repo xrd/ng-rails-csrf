@@ -12,8 +12,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{AngularJS rails gem which you can load into any rails project to make sure CSRF token is used with Angular http requests}
   gem.homepage      = ""
 
-  gem.files         = `git ls-files`.split($/)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  gem.files = Dir['lib/**/*.rb'] + Dir['vendor/assets/javascripts/*.js']
+
   gem.require_paths = ["lib"]
 end
