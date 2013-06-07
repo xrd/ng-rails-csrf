@@ -29,6 +29,7 @@ Now all HTTP requests (both those made with the raw $http object and those creat
 * @glebm for adding Turbolinks support. 
 * @sectore for fixing an issue with AngularJS v1.1. 
 * @johnb-razoo for adding support for Rails2 form helper and spelling errors.
+* @alanramsay for fixing dependency on git
 
 ## Contributing
 
