@@ -1,18 +1,21 @@
 describe "NgRailsCsrf", () ->
 
-        beforeEach( module( 'ng-rails-csrf' ) )
-        hp = undefined
+        myHttp = {}
+        myHttp.defaults = {}
+        myHttp.defaults.headers = {}
+        myHttp.defaults.headers.common = {}
+        
+        beforeEach ->
+                jQuery('head').append( $("<meta name='csrf-token' value='abc'>") );
 
-        beforeEach inject ( $http ) ->
-                hp = $http
+        beforeEach ->
+                angular.mock.module ($provide) ->
+                        $provide.value '$http', myHttp
+                        null
+        beforeEach ->
+                module( 'ng-rails-csrf' )
 
-        describe "test it", () ->
+        describe "#rails3", () ->
+                it "should have proper auth token in the headers", () ->
+                        expect( myHttp.defaults.headers.common['X-CSRF-TOKEN'] ).toEqual( "abc" )
 
-                beforeEach () ->
-                        # Put something in the HTML?
-                        console.log "We are here"
-                        # for rails 3
-                        document.write( "<meta name='csrf-token' value='abc'>" );
-                
-                it "should have auth tokens in the headers", () ->
-                        expect( hp.defaults.headers.common['X-CSRF-TOKEN'] ).toEqual( "abc" )
