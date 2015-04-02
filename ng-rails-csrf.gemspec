@@ -8,6 +8,7 @@ Gem::Specification.new do |gem|
   gem.version       = Ng::Rails::Csrf::VERSION
   gem.authors       = ["Chris Dawson"]
   gem.email         = ["xrdawson@gmail.com"]
+  gem.license       = "MIT"
   gem.description   = %q{AngularJS for using CSRF token with http requests}
   gem.summary       = %q{AngularJS rails gem which you can load into any rails project to make sure CSRF token is used with Angular http requests}
   gem.homepage      = ""
